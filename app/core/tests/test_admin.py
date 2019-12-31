@@ -8,7 +8,7 @@ class AdminSiteTests(TestCase):
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
             email='admin@tellymo.com',
-            # username='superuser',
+            username='superuser',
             password='password'
         )
         self.client.force_login(self.admin_user)
