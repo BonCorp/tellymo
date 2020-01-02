@@ -62,3 +62,14 @@ class ModelTestCase(TestCase):
             rtng=5
         )
         self.assertEqual(int(rating), rating.rtng)
+
+    def test_tvshow_str(self):
+        """Test the tv show string representation"""
+        tvshow = models.TvShow.objects.create(
+            title='Breaking bad',
+            sypnosis='A high school chemestry teacher turns drug dealer',
+            airdate='2018-10-24',
+            genre='Drama'
+
+        )
+        self.assertEqual(str(tvshow), tvshow.title)

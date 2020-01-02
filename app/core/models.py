@@ -68,3 +68,16 @@ class Rating(models.Model):
 
     def __int__(self):
         return int(self.rtng)
+
+
+class TvShow(models.Model):
+    """TvShow object"""
+    title = models.CharField(max_length=255)
+    sypnosis = models.TextField()
+    airdate = models.DateField(auto_now_add=False)
+    genre = models.CharField(max_length=50)
+    tags = models.ManyToManyField('Tag')
+    ratings = models.ManyToManyField('Rating')
+
+    def __str__(self):
+        return self.title
